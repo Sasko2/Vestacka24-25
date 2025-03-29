@@ -493,7 +493,7 @@ if __name__ == "__main__":
 
     initial_pillars = []
     for i in range(len(initial_input)):
-        if i < len(initial_input) and initial_input[i]:
+        if initial_input[i]:
             pillar = tuple(int(x) for x in initial_input[i].split(",") if x)
         else:
             pillar = tuple()
@@ -505,7 +505,7 @@ if __name__ == "__main__":
 
     goal_pillars = []
     for i in range(len(initial_pillars)):
-        if i < len(goal_input) and goal_input[i]:
+        if goal_input[i]:
             pillar = tuple(int(x) for x in goal_input[i].split(",") if x)
         else:
             pillar = tuple()
