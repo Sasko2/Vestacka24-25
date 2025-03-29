@@ -504,7 +504,7 @@ if __name__ == "__main__":
     goal_input = input().split(";")
 
     goal_pillars = []
-    for i in range(len(initial_pillars)):
+    for i in range(len(goal_input)):
         if goal_input[i]:
             pillar = tuple(int(x) for x in goal_input[i].split(",") if x)
         else:
