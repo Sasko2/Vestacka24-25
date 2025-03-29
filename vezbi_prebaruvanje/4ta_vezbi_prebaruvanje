@@ -388,16 +388,6 @@ class Squares(Problem):
 
         for i in range(5):
             new_kvadratcinja = list(kvadratcinja)
-            new_kvadratcinja[i] = move_right(kvadratcinja[i])
-            new_state = tuple(new_kvadratcinja)
-            if self.check_valid(new_state):
-                succ[f"Pomesti kvadratche {i+1} desno"] = new_state
-            new_kvadratcinja = list(kvadratcinja)
-            new_kvadratcinja[i] = move_left(kvadratcinja[i])
-            new_state = tuple(new_kvadratcinja)
-            if self.check_valid(new_state):
-                succ[f"Pomesti kvadratche {i + 1} levo"] = new_state
-            new_kvadratcinja = list(kvadratcinja)
             new_kvadratcinja[i] = move_up(kvadratcinja[i])
             new_state = tuple(new_kvadratcinja)
             if self.check_valid(new_state):
@@ -407,6 +397,17 @@ class Squares(Problem):
             new_state = tuple(new_kvadratcinja)
             if self.check_valid(new_state):
                 succ[f"Pomesti kvadratche {i + 1} dolu"] = new_state
+            new_kvadratcinja = list(kvadratcinja)
+            new_kvadratcinja[i] = move_right(kvadratcinja[i])
+            new_state = tuple(new_kvadratcinja)
+            if self.check_valid(new_state):
+                succ[f"Pomesti kvadratche {i+1} desno"] = new_state
+            new_kvadratcinja = list(kvadratcinja)
+            new_kvadratcinja[i] = move_left(kvadratcinja[i])
+            new_state = tuple(new_kvadratcinja)
+            if self.check_valid(new_state):
+                succ[f"Pomesti kvadratche {i + 1} levo"] = new_state
+
 
         return succ
 
